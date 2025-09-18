@@ -7,4 +7,9 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.main-container {
+  padding: 20px 0;
+  min-height: 800px;
 }/*# sourceMappingURL=App.css.map */

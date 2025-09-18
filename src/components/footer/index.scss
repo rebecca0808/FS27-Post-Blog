@@ -1,0 +1,14 @@
+.bd-footer {
+    a {
+        color: var(--bs-body-color);
+        text-decoration:none
+    }
+
+    a:hover,
+    a:focus {
+        color: var(--bs-link-hover-color);
+        text-decoration: underline
+    }
+}
+
+
