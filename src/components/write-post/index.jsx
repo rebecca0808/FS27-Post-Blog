@@ -1,13 +1,34 @@
+import {useState} from "react";
 export default props => {
+    const [postDetail, setPostDetail] = useState({
+        title: "",
+        content: ""
+    })
+
+    const handleChange = (e) => {
+        //step1: 获取用户输入
+        const { name, value } = e.target;
+
+        //step2: 更新状态，将老的值展开，用新的值覆盖掉
+        setPostDetail({
+            ...postDetail,
+            [name]: value
+        })
+    };
+
     const handleSubmit = (e) => {
         //step1: 组织表单默认提交行为
         e.preventDefault();
+
         //step2: 获取表单数据
-        const form = e.target;
-        const formData = new FormData(form);
-        const title = formData.get('title');
-        const content = formData.get('content');
+        // const form = e.target;
+        // const formData = new FormData(form);
+        // const title = formData.get('title');
+        // const content = formData.get('content');
+        console.log(postDetail)
+
         //step3: 数据校验 (minlength maxlength text number regExp)
+        
 
     }
     return (
@@ -19,6 +40,8 @@ export default props => {
                         <input 
                             type="text" 
                             name="title" 
+                            value={postDetail.title}
+                            onChange={handleChange}
                             className="form-control" 
                             placeholder="Please enter title, 2-32 characters"/>
                     </div>
@@ -27,6 +50,8 @@ export default props => {
                         <textarea 
                             className="form-control" 
                             name="content" 
+                            value={postDetail.content}
+                            onChange={handleChange}
                             rows="10" 
                             placeholder="Please enter content, maximum 140 characters">
                         </textarea>
