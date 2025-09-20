@@ -25,12 +25,29 @@ export default props => {
         // const formData = new FormData(form);
         // const title = formData.get('title');
         // const content = formData.get('content');
-        console.log(postDetail)
+
+        // 受控表单直接通过 postDetail 获取最新数据 console.log(postDetail)
 
         //step3: 数据校验 (minlength maxlength text number regExp)
-        
 
     }
+
+    // 手动validate表单数据
+    const validatForm = () => {
+        let isValid = true;
+        const {title, content} = postDetail;
+        if (title.trim().length < 2 || title.trim().length > 32) {
+            isValid = false;
+        }
+        if (content.length < 2 || content.length > 140) {
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+
+
     return (
         <div className="row">
             <div className="col-md-12">
