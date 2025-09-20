@@ -27,6 +27,16 @@ export default props => {
                                 </NavLink>
                             </li>
                         </ul>
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <NavLink
+                                    className="nav-link active"
+                                    aria-current="manage"
+                                    to="/manage"
+                                >Manage
+                                </NavLink>
+                            </li>
+                        </ul>
                     </div>
                 </div> 
             </nav>
